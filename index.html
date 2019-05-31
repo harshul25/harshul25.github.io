@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">body, html {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.bgimg {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background-image: url('/w3images/forestbridge.jpg');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background-position: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background-size: cover;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: "Courier New", Courier, monospace;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 25px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.topleft {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>left: 16px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.bottomleft {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>left: 16px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.middle {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform: translate(-50%, -50%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">hr {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 40%;</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="bgimg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="topleft"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Logo&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="middle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;COMING SOON&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p id="demo" style="font-size:30px"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="bottomleft"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Some text&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// Set the date we're counting down to</p>
+<p class="p1">var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();</p>
+<p class="p2"><br></p>
+<p class="p1">// Update the count down every 1 second</p>
+<p class="p1">var countdownfunction = setInterval(function() {</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Get todays date and time</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var now = new Date().getTime();</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Find the distance between now an the count down date</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var distance = countDownDate - now;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Time calculations for days, hours, minutes and seconds</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var days = Math.floor(distance / (1000 * 60 * 60 * 24));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>var seconds = Math.floor((distance % (1000 * 60)) / 1000);</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Output the result in an element with id="demo"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("demo").innerHTML = days + "d " + hours + "h "</p>
+<p class="p1"><span class="Apple-converted-space">  </span>+ minutes + "m " + seconds + "s ";</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// If the count down is over, write some text<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (distance &lt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>clearInterval(countdownfunction);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("demo").innerHTML = "EXPIRED";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}, 1000);</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
