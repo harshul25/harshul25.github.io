@@ -53,11 +53,14 @@
         </tr>
     </table>
 
-    <script>var tblUsers = document.getElementById('tbl_users_list');
+    <script>
+        var tblUsers = document.getElementById('tbl_users_list');
         var databaseRef = firebase.database().ref('users/');
 
 
         function save_user() {
+
+            alert('The user has been created successfully!');
 
             var user_name = document.getElementById('user_name').value;
 
