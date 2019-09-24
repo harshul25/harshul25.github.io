@@ -1,397 +1,107 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #F06161;
-}
+<head>
+    <title>Firebase Real Time Database</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-analytics.js"></script>
 
-.bgimg {
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
-
-.bgimg2 {
-  background-color: #F06161;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
-
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
-
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-hr {
-  margin: auto;
-  width: 40%;
-}
-
-* {
-  position: relative;
-}
-
-.frame {
-  width: 500px;
-  height: auto;
-  margin: 15% auto 0;
-  position: absolute;
-  width: 100%;
-}
-
-svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/**
- * Paper Plane
- */
-/*Paper Plane: Container*/
-.plane-container {
-  width: 200px;
-  margin: 0px auto;
-  z-index:3;
-}
- /*Paper Plane: Image*/
-.plane {
-  width: 100%;
-  height: 60px;
-}
-
-/*Paper Plane: Animation*/
-.plane-container {
-  -webkit-animation: paper-plane-scoping 2s alternate infinite;
-  -moz-animation: paper-plane-scoping 2s alternate infinite;
-  animation: paper-plane-scoping 2s alternate infinite;
-
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-
-@-webkit-keyframes paper-plane-scoping {
-  0% {
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    transform: translateY(0px);
-    
-  }
-  100% {
-    -webkit-transform: translateY(100px);
-    -moz-transform: translateY(100px);
-    transform: translateY(100px);
-    
-  }
-}
-
-.plane {
-  -webkit-animation-timing-function: ease-in-out;
-  -moz-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-
-  -webkit-animation: paper-plane-soaring 4s forwards infinite;
-  -moz-animation: paper-plane-soaring 4s forwards infinite;
-  animation: paper-plane-soaring 4s forwards infinite;
-}
-@-webkit-keyframes paper-plane-soaring {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    transform: rotate(0deg);
-    opacity: 1.5;
-  }
-  40% {
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    transform: rotate(15deg);
-    opacity:1.5;
-  }
-  50% {
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    transform: rotate(15deg);
-    opacity: 1.5;
-  }
-  60% {
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    transform: rotate(-10deg);
-    opacity: 1.5;
-  }
-  70% {
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    transform: rotate(-10deg);
-    opacity: 1.5;
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    transform: rotate(0deg);
-    opacity: 1.5;
-  }
-}
-
-/**
- * Clouds
- */
-.clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  transform: translateZ(0);
-}
-
-.cloud {
-  position: absolute;
-  top: 20%;
-  width: 300px;
-  right: 0;
-  opacity: 1;
-}
-
-.cloud.front {
-  z-index: 9;
-}
-
-.cloud.distant {
-  z-index: 1;
-}
-
-.cloud.background {
-  z-index: 1;
-}
-
-/*Cloud Sizing*/
-.cloud.smaller {
-  margin-right: 400px;
-  width: 100px;
-  margin-top: 50px;
-}
-
-.cloud.small {
-  margin-right: 200px;
-  width: 150px;
-}
-
-.cloud.big {
-  width: 500px;
-  margin-top: 50px;
-  margin-right: 150px;
-}
-
-.cloud.massive {
-  width: 600px;
-  margin-top: 20px;
-  margin-right: 0px;
-}
-
-
-/*Cloud: Animation*/
-.cloud {
-  -webkit-animation-name: cloud-movement;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-direction: forwards;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 8s;
-
-  -moz-animation-name: cloud-movement;
-  -moz-animation-timing-function: linear;
-  -moz-animation-direction: forwards;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-duration: 8s;
-
-  animation-name: cloud-movement;
-  animation-timing-function: linear;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-duration: 8s;
-}
-
-.slow {
-  -webkit-animation-duration: 9.2s;
-  -moz-animation-duration: 9.2s;
-  animation-duration: 9.2s;
-}
-
-.slower {
-  -webkit-animation-duration: 11.2s;
-  -moz-animation-duration: 11.2s;
-  animation-duration: 11.2s;
-}
-
-.slowest {
-  -webkit-animation-duration: 13.5s;
-  -moz-animation-duration: 13.5s;
-  animation-duration: 13.5s;
-}
-
-.super-slow {
-  -webkit-animation-duration: 20.5s;
-  -moz-animation-duration: 20.5s;
-  animation-duration: 20.5s;
-}
-
-@-webkit-keyframes cloud-movement {
-  0% {
-    opacity: 0.1;
-    -webkit-transform: translateX(300px);
-    -moz-transform: translateX(300px);
-    transform: translateX(300px);
-  }
-  10% {
-
-    opacity: 0.7;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateX(-1000px);
-    -moz-transform: translateX(-1000px);
-    transform: translateX(-1000px);
-  }
-}
-  
-</style>
+    <script>// Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC0f_ryFOq-6savQpcI5fGN8TG8JDlr1so",
+            authDomain: "fir-realtime-db-e830d.firebaseapp.com",
+            databaseURL: "https://fir-realtime-db-e830d.firebaseio.com",
+            projectId: "fir-realtime-db-e830d",
+            storageBucket: "fir-realtime-db-e830d.appspot.com",
+            messagingSenderId: "5761920324",
+            appId: "1:5761920324:web:86d19748996f370aa8bb11",
+            measurementId: "G-PGEPJMH1Q5"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+    <style>
+    </style>
+</head>
 <body>
-<div class="frame">
-<div class="plane-container">
-<a href="http://customer.io/" target="_blank">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-width="1131.53px" height="379.304px" viewBox="0 0 1131.53 379.304" enable-background="new 0 0 1131.53 379.304"
-xml:space="preserve" class="plane">
-<polygon fill="#D8D8D8" points="72.008,0 274.113,140.173 274.113,301.804 390.796,221.102 601.682,367.302 1131.53,0.223  "/>
-<polygon fill="#C4C4C3" points="1131.53,0.223 274.113,140.173 274.113,301.804 390.796,221.102   "/>
-</svg></a>
-  
-</div>
-</div>
-<div class="clouds">
+    <table>
+        <tr>
+            <td> ID </td>
+            <td><input type="text" name="ID" id="user_ID" /></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" name="user_name" id="user_name" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Save" onclick="save_user()"/>
+                <input type="button" value="Update" onclick="update_user()" />
+                <input type="button" value="Delete" onclick="delete_user()" />
+            </td>
+        </tr>
+    </table>
+    <h3> User List </h3>
+    <table id="tbl_user_list">
+        <tr>
+            <td>#ID</td>
+            <td>NAME</td>
+        </tr>
+    </table>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud big front slowest">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
+    <script>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small slow">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
+        var tblUsers = document.getElementById('tbl_users_list');
+        var databaseRef = firebase.databaseRef().ref('users/');
+        var user_name = document.getElementById('user_name').value;
+        var user_id = document.getElementById('user_ID').value;
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
+        function save_user() {
+            var uid = firebase.databaseRef().ref().child('users').push().key;
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud slower">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
-</div>
+            var data = {
+                user_id: uid,
+                user_name: user_name
+            }
 
-<div class="bgimg">
-  <div class="topleft">
-    <img src = "rectangle.png" height="100px" width="100px">
-  </div>
-  <div class="middle">
-    <h1>COMING SOON</h1>
-    <hr>
-    <p id="demo" style="font-size:30px"></p>
-  </div>
-  <div class="bottomleft">
-    <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright Harshul 2019</p>
-  </div>
-</div>
-<div class = "bgimg2">
-    
-</div>
+            var updates = {};
+            updates['/users/'+uid] = data;
+            firebase.database().ref().update(updates);
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+            alert('The user has been created successfully!');
+            reload_page();
 
-// Update the count down every 1 second
-var countdownfunction = setInterval(function() {
+        }
+        function update_user() {
 
-  // Get todays date and time
-  var now = new Date().getTime();
-  
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-  
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-  
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(countdownfunction);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
+            var data = {
+                user_id: user_id,
+                user_name: user_name
+            }
+
+            var updates = {};
+            updates['/users/'+ user_id] = data;
+            firebase.database().ref().update(updates);
+
+            alert('The user is updated successfully!');
+
+            relaod_page();
+          
+        }
+        function delete_user() {
+            firebase.database().ref().child('/users/'+ user_id).remove();
+            alert('The user has been removed!');
+            reload_page();
+
+        }
+        function relaod_page(){
+            window.location.reload();
+        }
+     </script>
 
 </body>
 </html>
