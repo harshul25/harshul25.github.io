@@ -41,6 +41,13 @@
     </div>
 
     <!-- Header -->
+    <script>
+        var quotes = ['Hello', 'Bonjour', 'Nǐ hǎo', 'Namaste', 'Greetings']
+    function randomQuotes() {
+        var idx = Math.floor(Math.random() * quotes.length)
+        document.getElementById('quote').innerHTML = quotes[idx]
+    }
+    </script>
     <header class="w3-container w3-red w3-center" style="padding:128px 16px">
         <h1 class="w3-margin w3-jumbo" id="hello"></h1>
         <p class="w3-xlarge">Welcome to Reach!</p>
@@ -105,13 +112,7 @@
                 x.className = x.className.replace(" w3-show", "");
             }
         }</script>
-    <script>
-        var quotes = ['Hello', 'Bonjour', 'Nǐ hǎo', 'Namaste', 'Greetings']
-    function randomQuotes() {
-        var idx = Math.floor(Math.random() * quotes.length)
-        document.getElementById('quote').innerHTML = quotes[idx]
-    }
-    </script>
+
 </body>
 </html>
 
