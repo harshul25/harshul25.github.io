@@ -205,6 +205,18 @@
             transform: translateX(20%);
         }
     </style>
+
+    <script>
+        const signUpButton = document.getElementById('signUp')
+        const signInButton = document.getElementById('signIn')
+        const container = document.getElementById('container')
+
+        signUpButton.addEventListener('click', () => container.classList.add('right-panel-active'));
+
+        signInButton.addEventListener('click', () => container.classList.remove('right-panel-active'));
+
+    </script>
+
     <div class="container" id="conatiner">
         <div class="form-container sign-up-conatiner">
             <form action="#">
@@ -241,14 +253,6 @@
             </div>
         </div>
     </div>
-    <script>
-        const signUpButton = document.getElementById('signUp')
-        const signInButton = document.getElementById('signIn')
-        const container = document.getElementById('container')
 
-        signUpButton.addEventListener('click',()=>container.classList.add('right-panel-active'));
-
-        signInButton.addEventListener('click',()=>container.classList.remove('right-panel-active'));
-    </script>
 </body>
 </html>
