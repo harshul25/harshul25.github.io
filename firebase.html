@@ -115,7 +115,7 @@
         <p><input class="w3-input w3-padding-16 w3-border" id="name" type="text" placeholder="Last Name" required name="Last Name"></p>
         <p><input class="w3-input w3-padding-16 w3-border" id="number" type="number" placeholder="Student ID Number" required name="Student ID Number"></p>
         <p><input class="w3-input w3-padding-16 w3-border" id="username" type="text" placeholder="Laurier Username" required name="Laurier Username"></p>
-        <p><button class="w3-button" onclick="myFunction()" type="submit">Login</button></p>
+        <p><button class="w3-button" onclick="mySecondFunction()" type="submit">Login</button></p>
       </form>
     </div>
   </div>
@@ -131,15 +131,17 @@
             } else {
                 x.className = x.className.replace(" w3-show", "");
             }
-        }</script>
- <script>var quotes = ['Hello', 'Bonjour', 'Nǐ hǎo', 'Namaste', 'Greetings'];
+        }
+
+
+ var quotes = ['Hello', 'Bonjour', 'Nǐ hǎo', 'Namaste', 'Greetings'];
      function randomQuotes() {
          var idx = Math.floor(Math.random() * quotes.length);
          document.getElementById('quote').innerHTML = quotes[idx];
      }
 
 
-     function myFunction() {
+     function mySecondFunction() {
 
 
 
@@ -166,6 +168,7 @@
         alert("You are in!")
         }
 }
+
      </script>
 
 </body>
