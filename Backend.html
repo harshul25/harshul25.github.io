@@ -20,7 +20,7 @@
         font-size: 200px
     }
 </style>
-<body onload="randomQuotes()">
+<body>
 
     <!-- Navbar -->
     <div class="w3-top">
@@ -40,6 +40,33 @@
         </div>
     </div>
 
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDLNYJdkq9HSQk-sN2IXr18Njv8xWocPAc",
+    authDomain: "reach-70876.firebaseapp.com",
+    databaseURL: "https://reach-70876.firebaseio.com",
+    projectId: "reach-70876",
+    storageBucket: "reach-70876.appspot.com",
+    messagingSenderId: "430749335004",
+    appId: "1:430749335004:web:f063263feea5ab7a676319"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+
+
     <!-- Header -->
 
     <header class="w3-container w3-red w3-center" style="padding:128px 16px">
@@ -57,7 +84,7 @@
 
                 <p class="w3-text-grey">
                     Getting involved is a great way to meet people, and with our help your club can reach out to more students across the entire campus. We sort all availible oppertunities to the desired skills students want to achieve. This way not only you get a better chance of getting into the the right club but
-                    the club gets a better chance of meeting the right candidate for the vacant position. 
+                    the club gets a better chance of meeting the right candidate for the vacant position.
                 </p>
             </div>
 
@@ -119,12 +146,20 @@
         <p><input class="w3-input w3-padding-16 w3-border" id="number" type="number" placeholder="Student ID Number" required name="Student ID Number"></p>
         <p><input class="w3-input w3-padding-16 w3-border" id="username" type="text" placeholder="Laurier Username" required name="Laurier Username"></p>
         <p><button class="w3-button" onclick="mySecondFunction()" type="submit">Login</button></p>
+        <p> <button type="w3-button" onclick="test()" name="button"> test </button></p>
       </form>
     </div>
   </div>
 </div>
 
+<script>
+var maintext = document.getElementById("username");
 
+function test(){
+  window.alert("working");
+}
+
+</script>
 
  <script>// Used to toggle the menu on small screens when clicking on the menu button
         function myFunction() {
@@ -154,19 +189,19 @@
 
 
          num = StudentNum % 10000;
-         
+
          lower = last.toLowerCase();
-         
+
          n = lower.substring(0, 4);
-         
+
          num = num.toString();
-         
+
          x = n.concat(num);
-         
-         
+
+
          test = x.localeCompare(name);
-         
-         
+
+
         if(test == 0){
         alert("You are in!")
         }
@@ -176,4 +211,3 @@
 
 </body>
 </html>
-
