@@ -146,7 +146,7 @@
         <p><input class="w3-input w3-padding-16 w3-border" id="number" type="number" placeholder="Student ID Number" required name="Student ID Number"></p>
         <p><input class="w3-input w3-padding-16 w3-border" id="username" type="text" placeholder="Laurier Username" required name="Laurier Username"></p>
         <p><button class="w3-button" onclick="mySecondFunction()" type="submit">Login</button></p>
-        <p> <button type="w3-button" onclick="test()" name="button"> test </button></p>
+        <p><button type="w3-button" onclick="test()" type="submit"> test </button></p>
       </form>
     </div>
   </div>
@@ -156,7 +156,8 @@
 var maintext = document.getElementById("username");
 
 function test(){
-  window.alert("working");
+  var fireref = firebase.database().ref();
+  fireref.child("Text").set("Some vaue");
 }
 
 </script>
