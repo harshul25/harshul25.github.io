@@ -1,30 +1,39 @@
 <body>
-  <p><button onclick="test()">hey</button></p>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
-  <script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+<script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyDLNYJdkq9HSQk-sN2IXr18Njv8xWocPAc",
-    authDomain: "reach-70876.firebaseapp.com",
-    databaseURL: "https://reach-70876.firebaseio.com",
-    projectId: "reach-70876",
-    storageBucket: "reach-70876.appspot.com",
-    messagingSenderId: "430749335004",
-    appId: "1:430749335004:web:f063263feea5ab7a676319"
+    apiKey: "AIzaSyD48aPOg7xbK4U948zxNYO1DClAA8Nh7BA",
+    authDomain: "rosy-gantry-245516.firebaseapp.com",
+    databaseURL: "https://rosy-gantry-245516.firebaseio.com",
+    projectId: "rosy-gantry-245516",
+    storageBucket: "rosy-gantry-245516.appspot.com",
+    messagingSenderId: "489711909856",
+    appId: "1:489711909856:web:385efff014f2f587844985",
+    measurementId: "G-LXJE6WPR4K"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 </script>
 
-  <script>
+<p>
+<button onclick="test()">
+test
+</button>
+</p>
 
+<script>
   function test(){
-    window.alert("here!");
-    firebase.database().ref().set("some value");
-    //firebaseRef.set("Some value");
-    window.alert("It's done!");
+    var fireref = firebase.database().ref();
+    fireref..push().set("some value");
+    window.alert("it's done!");
   }
-
-
-  </script>
+</script>
 </body>
