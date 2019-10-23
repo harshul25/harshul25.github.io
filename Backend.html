@@ -1,4 +1,4 @@
-<body>
+<head>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
@@ -9,20 +9,22 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyD48aPOg7xbK4U948zxNYO1DClAA8Nh7BA",
-    authDomain: "rosy-gantry-245516.firebaseapp.com",
-    databaseURL: "https://rosy-gantry-245516.firebaseio.com",
-    projectId: "rosy-gantry-245516",
-    storageBucket: "rosy-gantry-245516.appspot.com",
-    messagingSenderId: "489711909856",
-    appId: "1:489711909856:web:385efff014f2f587844985",
-    measurementId: "G-LXJE6WPR4K"
+    apiKey: "AIzaSyC_3p6fILc_p6I-vIwtOjWcTCTisSvdgV4",
+    authDomain: "reach-c4bb7.firebaseapp.com",
+    databaseURL: "https://reach-c4bb7.firebaseio.com",
+    projectId: "reach-c4bb7",
+    storageBucket: "reach-c4bb7.appspot.com",
+    messagingSenderId: "49135709840",
+    appId: "1:49135709840:web:6c45e42afe3af25e5bf215",
+    measurementId: "G-T7DVVE0G6P"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
+</head>
 
+<body>
 <p>
 <button onclick="test()">
 test
@@ -31,8 +33,7 @@ test
 
 <script>
   function test(){
-    var fireref = firebase.database().ref();
-    fireref.push().set("some value");
+    firebase.database().ref().push().set("some value");
     window.alert("it's done!");
   }
 </script>
