@@ -4,11 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dispensador</title>
+    <title>Reach</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('.fa-search');
+  border-radius: 25px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 50%;
+  outline-width: 0;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif
+}
+
+.w3-bar, h1, button {
+    font-family: "Montserrat", sans-serif
+}
+
+.fa-briefcase, .fa-calendar {
+    font-size: 200px
+}
+
+</style>
+
 </head>
 <body>
-    <h1>SELECCIONA TU BEBIDA</h1>
-    <h2 id="fireHeading"></h2>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+      <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+          <a href="Home.html" class="w3-bar-item w3-button w3-padding-large w3-red">Home</a>
+          <a href="Home.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Log Out</a>
+          <a href="Mobile App.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-red">Mobile App</a>
+
+      </div>
+
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+          <a onclick="document.getElementById('Login').style.display='block'" class="w3-bar-item w3-button w3-padding-large">Login</a>
+          <a href="Backend.html" class="w3-bar-item w3-button w3-padding-large">Mobile App</a>
+
+      </div>
+  </div>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="center">
+<h2>Job Postings</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for jobs.." title="Type in a name">
+<button class="w3-button w3-white w3-border w3-border-red w3-round-large w3-hover-red" style="outline-width:0px">Filter with Title</button>
+<button class="w3-button w3-white w3-border w3-border-red w3-round-large w3-hover-red" style="outline-width:0px">Filter with Club</button>
+
+<table id="myTable">
+<tr class="header">
+  <th style="width:60%;">Position</th>
+  <th style="width:40%;">Student Club</th>
+</tr>
+<tr>
+  <td>Alfreds Futterkiste</td>
+  <td>Random</td>
+</tr>
+<tr>
+  <td>Berglunds snabbkop</td>
+  <td>Random</td>
+</tr>
+<tr>
+  <td>Island Trading</td>
+  <td>Random</td>
+</tr>
+<tr>
+  <td>Koniglich Essen</td>
+  <td>Germany</td>
+</tr>
+<tr>
+  <td>Laughing Bacchus Winecellars</td>
+  <td>Canada</td>
+</tr>
+<tr>
+  <td>Magazzini Alimentari Riuniti</td>
+  <td>Italy</td>
+</tr>
+<tr>
+  <td>North/South</td>
+  <td>UK</td>
+</tr>
+<tr>
+  <td>Paris specialites</td>
+  <td>France</td>
+</tr>
+</table>
+
+</div>
+</div>
+<script>
+function myFunction() {
+var input, filter, table, tr, td, i, txtValue;
+input = document.getElementById("myInput");
+filter = input.value.toUpperCase();
+table = document.getElementById("myTable");
+tr = table.getElementsByTagName("tr");
+for (i = 0; i < tr.length; i++) {
+  td = tr[i].getElementsByTagName("td")[1];
+  if (td) {
+    txtValue = td.textContent || td.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
+}
+</script>
+
+
+
 
     <p><button type="button" name="button" onclick="submmitClick()">hey</button></p>
     <p><button type="button" name="button" onclick="click()">remove</button></p>
