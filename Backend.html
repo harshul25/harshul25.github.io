@@ -1,52 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dispensador</title>
 </head>
-
 <body>
-<p>
-<button onclick="test()">
-test
-</button>
-</p>
+    <h1>SELECCIONA TU BEBIDA</h1>
+    <h2 id="fireHeading"></h2>
 
-<script>
-  function test(){
-    firebase.database().ref().push().set("some value");
-    window.alert("it's done!");
-  }
-</script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <p><button type="button" name="button" onclick="submmitClick()">hey</button></p>
+    <p><button type="button" name="button" onclick="click()">remove</button></p>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-   https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
-<script>
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyC_3p6fILc_p6I-vIwtOjWcTCTisSvdgV4",
-  authDomain: "reach-c4bb7.firebaseapp.com",
-  databaseURL: "https://reach-c4bb7.firebaseio.com",
-  projectId: "reach-c4bb7",
-  storageBucket: "reach-c4bb7.appspot.com",
-  messagingSenderId: "49135709840",
-  appId: "1:49135709840:web:6c45e42afe3af25e5bf215",
-  measurementId: "G-T7DVVE0G6P"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-</script>
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebase/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC_3p6fILc_p6I-vIwtOjWcTCTisSvdgV4",
+          authDomain: "reach-c4bb7.firebaseapp.com",
+          databaseURL: "https://reach-c4bb7.firebaseio.com",
+          projectId: "reach-c4bb7",
+          storageBucket: "reach-c4bb7.appspot.com",
+          messagingSenderId: "49135709840",
+          appId: "1:49135709840:web:6c45e42afe3af25e5bf215",
+          measurementId: "G-T7DVVE0G6P"
+          };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebase/7.2.1/firebase-analytics.js"></script>
+        var fireHeading = document.getElementById("fireHeading");
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebase/7.2.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebase/7.2.1/firebase-firestore.js"></script>
+        var firebaseHeadingRef = firebase.database().ref().child("Heading");
+
+        firebaseHeadingRef.on('value',function(datasnapshot){
+          fireHeading.innerText = datasnapshot.val()
+
+        });
+
+
+
+        function submmitClick() {
+            window.alert("Wenaaaa sotooo")
+            firebase.database().ref().child("Heading").set("Some value")
+        }
+
+        var refrence = firebase.database().ref().child("Heading")
+        function click(){
+          refrence.remove()
+        }
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="index.js"></script>
+
 </body>
+</html>
