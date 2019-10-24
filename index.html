@@ -106,13 +106,13 @@ svg {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
     transform: translateY(0px);
-    
+
   }
   100% {
     -webkit-transform: translateY(100px);
     -moz-transform: translateY(100px);
     transform: translateY(100px);
-    
+
   }
 }
 
@@ -288,19 +288,19 @@ svg {
     transform: translateX(-1000px);
   }
 }
-  
+
 </style>
 <body>
 <div class="frame">
 <div class="plane-container">
-<a href="firebase.html" target="_blank">
+<a href="Home.html" target="_blank">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 width="1131.53px" height="379.304px" viewBox="0 0 1131.53 379.304" enable-background="new 0 0 1131.53 379.304"
 xml:space="preserve" class="plane">
 <polygon fill="#D8D8D8" points="72.008,0 274.113,140.173 274.113,301.804 390.796,221.102 601.682,367.302 1131.53,0.223  "/>
 <polygon fill="#C4C4C3" points="1131.53,0.223 274.113,140.173 274.113,301.804 390.796,221.102   "/>
 </svg></a>
-  
+
 </div>
 </div>
 <div class="clouds">
@@ -359,7 +359,7 @@ S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715
   </div>
 </div>
 <div class = "bgimg2">
-    
+
 </div>
 
 <script>
@@ -371,21 +371,21 @@ var countdownfunction = setInterval(function() {
 
   // Get todays date and time
   var now = new Date().getTime();
-  
+
   // Find the distance between now an the count down date
   var distance = countDownDate - now;
-  
+
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
+
   // Output the result in an element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-  
-  // If the count down is over, write some text 
+
+  // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(countdownfunction);
     document.getElementById("demo").innerHTML = "EXPIRED";
