@@ -15,7 +15,6 @@
 }
 
 #myInput {
-  background-image: url('.fa-search');
   border-radius: 25px;
   background-position: 10px 10px;
   background-repeat: no-repeat;
@@ -64,6 +63,11 @@ body, h1, h2, h3, h4, h5, h6 {
 .fa-briefcase, .fa-calendar {
     font-size: 200px
 }
+.active {
+  background-color: red;
+  color: white;
+}
+
 
 </style>
 
@@ -93,10 +97,10 @@ body, h1, h2, h3, h4, h5, h6 {
 <h2>Job Postings</h2>
 
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for jobs.." title="Type in a name">
-<button class="w3-button w3-white w3-border w3-border-red w3-round-large w3-hover-red" style="outline-width:0px">Filter with Title</button>
-<button class="w3-button w3-white w3-border w3-border-red w3-round-large w3-hover-red" style="outline-width:0px">Filter with Club</button>
 
-<table id="myTable">
+<button id="toggle" class="btn w3-button w3-white w3-border w3-border-red w3-round-large w3-hover-red" onclick="toggle()"  style="outline-width:0px">Filter with Title</button>
+
+<table id="myTable" style="overflow-x:auto;">
 <tr class="header">
   <th style="width:60%;">Position</th>
   <th style="width:40%;">Student Club</th>
@@ -126,10 +130,6 @@ body, h1, h2, h3, h4, h5, h6 {
   <td>Italy</td>
 </tr>
 <tr>
-  <td>North/South</td>
-  <td>UK</td>
-</tr>
-<tr>
   <td>Paris specialites</td>
   <td>France</td>
 </tr>
@@ -139,13 +139,20 @@ body, h1, h2, h3, h4, h5, h6 {
 </div>
 <script>
 function myFunction() {
-var input, filter, table, tr, td, i, txtValue;
+var input, filter, table, tr, td, i, txtValue, x, temp;
+temp = 0
+x = document.getElementById("toggle");
+if(x.innerHTML == "Filter with Title"){
+  temp = 0
+}else{
+  temp = 1
+}
 input = document.getElementById("myInput");
 filter = input.value.toUpperCase();
 table = document.getElementById("myTable");
 tr = table.getElementsByTagName("tr");
 for (i = 0; i < tr.length; i++) {
-  td = tr[i].getElementsByTagName("td")[1];
+  td = tr[i].getElementsByTagName("td")[temp];
   if (td) {
     txtValue = td.textContent || td.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -156,6 +163,18 @@ for (i = 0; i < tr.length; i++) {
   }
 }
 }
+
+
+function toggle() {
+                var change = document.getElementById("toggle");
+                if (change.innerHTML == "Filter with Title")
+                {
+                    change.innerHTML = "Filter with Club";
+                }
+                else {
+                    change.innerHTML = "Filter with Title";
+                }
+            }
 </script>
 
 
