@@ -177,16 +177,9 @@
 
 
         if(test == 0){
-        openInTab("Backend.html");
+        window.open("Backend.html","_self");
         }
 }
-
-function openInTab(source){
-                var sameTab=safari.self.browserWindow.insertTab();
-                sameTab.url=source;
-                window.open(source, "_self")
-            }
-
      </script>
 
 </body>
