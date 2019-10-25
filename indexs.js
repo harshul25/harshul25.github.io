@@ -1,4 +1,4 @@
-window.alert("Hey!")
+//window.alert("Hey!")
 
 
   var rootRef = firebase.database().ref().child("Heading");
