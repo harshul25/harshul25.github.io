@@ -1,406 +1,169 @@
-﻿<!DOCTYPE html>
-<head>
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #F06161;
-}
-
-
-.bgimg {
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
-
-.bgimg2 {
-  background-color: #F06161;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
-
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
-
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-hr {
-  margin: auto;
-  width: 40%;
-}
-
-* {
-  position: relative;
-}
-
-.frame {
-  width: 500px;
-  height: auto;
-  margin: 15% auto 0;
-  position: absolute;
-  width: 100%;
-}
-
-svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/**
- * Paper Plane
- */
-/*Paper Plane: Container*/
-.plane-container {
-  width: 200px;
-  margin: 0px auto;
-  z-index:3;
-}
- /*Paper Plane: Image*/
-.plane {
-  width: 100%;
-  height: 60px;
-}
-
-/*Paper Plane: Animation*/
-.plane-container {
-  -webkit-animation: paper-plane-scoping 2s alternate infinite;
-  -moz-animation: paper-plane-scoping 2s alternate infinite;
-  animation: paper-plane-scoping 2s alternate infinite;
-
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-
-@-webkit-keyframes paper-plane-scoping {
-  0% {
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    transform: translateY(0px);
-
-  }
-  100% {
-    -webkit-transform: translateY(100px);
-    -moz-transform: translateY(100px);
-    transform: translateY(100px);
-
-  }
-}
-
-.plane {
-  -webkit-animation-timing-function: ease-in-out;
-  -moz-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-
-  -webkit-animation: paper-plane-soaring 4s forwards infinite;
-  -moz-animation: paper-plane-soaring 4s forwards infinite;
-  animation: paper-plane-soaring 4s forwards infinite;
-}
-@-webkit-keyframes paper-plane-soaring {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    transform: rotate(0deg);
-    opacity: 1.5;
-  }
-  40% {
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    transform: rotate(15deg);
-    opacity:1.5;
-  }
-  50% {
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    transform: rotate(15deg);
-    opacity: 1.5;
-  }
-  60% {
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    transform: rotate(-10deg);
-    opacity: 1.5;
-  }
-  70% {
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    transform: rotate(-10deg);
-    opacity: 1.5;
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    transform: rotate(0deg);
-    opacity: 1.5;
-  }
-}
-
-/**
- * Clouds
- */
-.clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  transform: translateZ(0);
-}
-
-.cloud {
-  position: absolute;
-  top: 20%;
-  width: 300px;
-  right: 0;
-  opacity: 1;
-}
-
-.cloud.front {
-  z-index: 9;
-}
-
-.cloud.distant {
-  z-index: 1;
-}
-
-.cloud.background {
-  z-index: 1;
-}
-
-/*Cloud Sizing*/
-.cloud.smaller {
-  margin-right: 400px;
-  width: 100px;
-  margin-top: 50px;
-}
-
-.cloud.small {
-  margin-right: 200px;
-  width: 150px;
-}
-
-.cloud.big {
-  width: 500px;
-  margin-top: 50px;
-  margin-right: 150px;
-}
-
-.cloud.massive {
-  width: 600px;
-  margin-top: 20px;
-  margin-right: 0px;
-}
-
-
-/*Cloud: Animation*/
-.cloud {
-  -webkit-animation-name: cloud-movement;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-direction: forwards;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 8s;
-
-  -moz-animation-name: cloud-movement;
-  -moz-animation-timing-function: linear;
-  -moz-animation-direction: forwards;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-duration: 8s;
-
-  animation-name: cloud-movement;
-  animation-timing-function: linear;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-duration: 8s;
-}
-
-.slow {
-  -webkit-animation-duration: 9.2s;
-  -moz-animation-duration: 9.2s;
-  animation-duration: 9.2s;
-}
-
-.slower {
-  -webkit-animation-duration: 11.2s;
-  -moz-animation-duration: 11.2s;
-  animation-duration: 11.2s;
-}
-
-.slowest {
-  -webkit-animation-duration: 13.5s;
-  -moz-animation-duration: 13.5s;
-  animation-duration: 13.5s;
-}
-
-.super-slow {
-  -webkit-animation-duration: 20.5s;
-  -moz-animation-duration: 20.5s;
-  animation-duration: 20.5s;
-}
-
-@-webkit-keyframes cloud-movement {
-  0% {
-    opacity: 0.1;
-    -webkit-transform: translateX(300px);
-    -moz-transform: translateX(300px);
-    transform: translateX(300px);
-  }
-  10% {
-
-    opacity: 0.7;
-  }
-  90% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateX(-1000px);
-    -moz-transform: translateX(-1000px);
-    transform: translateX(-1000px);
-  }
-}
-
-</style>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
 <body>
-<div class="frame">
-<div class="plane-container">
-<a href="Home.html" target="_blank">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-width="1131.53px" height="379.304px" viewBox="0 0 1131.53 379.304" enable-background="new 0 0 1131.53 379.304"
-xml:space="preserve" class="plane">
-<polygon fill="#D8D8D8" points="72.008,0 274.113,140.173 274.113,301.804 390.796,221.102 601.682,367.302 1131.53,0.223  "/>
-<polygon fill="#C4C4C3" points="1131.53,0.223 274.113,140.173 274.113,301.804 390.796,221.102   "/>
-</svg></a>
-
-</div>
-</div>
-<div class="clouds">
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud big front slowest">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small slow">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
-height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud slower">
-<path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
-c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
-C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
-S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
-</svg>
-</div>
-
-<div class="bgimg">
-  <div class="topleft">
-    <img src = "rectangle.png" height="100px" width="100px">
-  </div>
-  <div class="middle">
-    <h1>COMING SOON</h1>
-    <hr>
-    <p id="demo" style="font-size:30px"></p>
-  </div>
-  <div class="bottomleft">
-    <p><span class="glyphicon glyphicon-copyright-mark"></span> Copyright Harshul 2019</p>
-  </div>
-</div>
-<div class = "bgimg2">
-
-</div>
-
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-
-// Update the count down every 1 second
-var countdownfunction = setInterval(function() {
-
-  // Get todays date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is over, write some text
-  if (distance < 0) {
-    clearInterval(countdownfunction);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
-
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;title&gt;W3.CSS Template&lt;/title&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1">&lt;link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"&gt;</p>
+<p class="p1">&lt;link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'&gt;</p>
+<p class="p1">&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Navigation bar with social media icons --&gt;</p>
+<p class="p1">&lt;div class="w3-bar w3-animate-opacity w3-hide-small"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="#" class="w3-bar-item w3-button"&gt;&lt;i class="fa fa-twitter"&gt;&lt;/i&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="#" class="w3-bar-item w3-button"&gt;&lt;i class="fa fa-linkedin"&gt;&lt;/i&gt;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="#" class="w3-bar-item w3-button w3-right"&gt;&lt;i class="fa fa-briefcase"&gt;&lt;/i&gt;&lt;/a&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body class="w3-black"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Page Container --&gt;</p>
+<p class="p1">&lt;div class="w3-content w3-margin-top" style="max-width:1400px;"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- The Grid --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="w3-row-padding"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Left Column --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="w3-third"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="w3-white w3-text-grey w3-card-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-display-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-display-bottomleft w3-container w3-text-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Jane Doe&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"&gt;&lt;/i&gt;Designer&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"&gt;&lt;/i&gt;London, UK&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"&gt;&lt;/i&gt;ex@mail.com&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"&gt;&lt;/i&gt;1224435534&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;hr&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="w3-large"&gt;&lt;b&gt;&lt;i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"&gt;&lt;/i&gt;Skills&lt;/b&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Adobe Photoshop&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-light-grey w3-round-xlarge w3-small"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%"&gt;90%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Photography&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-light-grey w3-round-xlarge w3-small"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="w3-center w3-text-white"&gt;80%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Illustrator&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-light-grey w3-round-xlarge w3-small"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%"&gt;75%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Media&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-light-grey w3-round-xlarge w3-small"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%"&gt;50%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;br&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="w3-large w3-text-theme"&gt;&lt;b&gt;&lt;i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"&gt;&lt;/i&gt;Languages&lt;/b&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;English&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-light-grey w3-round-xlarge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Spanish&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-light-grey w3-round-xlarge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;German&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="w3-light-grey w3-round-xlarge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;&lt;br&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- End Left Column --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Right Column --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="w3-twothird"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="w3-container w3-card w3-white w3-margin-bottom"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="w3-text-grey w3-padding-16"&gt;&lt;i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"&gt;&lt;/i&gt;Work Experience&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h5 class="w3-opacity"&gt;&lt;b&gt;Front End Developer / w3schools.com&lt;/b&gt;&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h6 class="w3-text-teal"&gt;&lt;i class="fa fa-calendar fa-fw w3-margin-right"&gt;&lt;/i&gt;Jan 2015 - &lt;span class="w3-tag w3-teal w3-round"&gt;Current&lt;/span&gt;&lt;/h6&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h5 class="w3-opacity"&gt;&lt;b&gt;Web Developer / something.com&lt;/b&gt;&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h6 class="w3-text-teal"&gt;&lt;i class="fa fa-calendar fa-fw w3-margin-right"&gt;&lt;/i&gt;Mar 2012 - Dec 2014&lt;/h6&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h5 class="w3-opacity"&gt;&lt;b&gt;Graphic Designer / designsomething.com&lt;/b&gt;&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h6 class="w3-text-teal"&gt;&lt;i class="fa fa-calendar fa-fw w3-margin-right"&gt;&lt;/i&gt;Jun 2010 - Mar 2012&lt;/h6&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &lt;/p&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="w3-container w3-card w3-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="w3-text-grey w3-padding-16"&gt;&lt;i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"&gt;&lt;/i&gt;Education&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h5 class="w3-opacity"&gt;&lt;b&gt;W3Schools.com&lt;/b&gt;&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h6 class="w3-text-teal"&gt;&lt;i class="fa fa-calendar fa-fw w3-margin-right"&gt;&lt;/i&gt;Forever&lt;/h6&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Web Development! All I need to know in one place&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h5 class="w3-opacity"&gt;&lt;b&gt;London Business School&lt;/b&gt;&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h6 class="w3-text-teal"&gt;&lt;i class="fa fa-calendar fa-fw w3-margin-right"&gt;&lt;/i&gt;2013 - 2015&lt;/h6&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Master Degree&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;hr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="w3-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h5 class="w3-opacity"&gt;&lt;b&gt;School of Coding&lt;/b&gt;&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h6 class="w3-text-teal"&gt;&lt;i class="fa fa-calendar fa-fw w3-margin-right"&gt;&lt;/i&gt;2010 - 2013&lt;/h6&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Bachelor Degree&lt;/p&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- End Right Column --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- End Grid --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- End Page Container --&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;footer class="w3-container w3-teal w3-center w3-margin-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Find me on social media.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;i class="fa fa-facebook-official w3-hover-opacity"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;i class="fa fa-instagram w3-hover-opacity"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;i class="fa fa-snapchat w3-hover-opacity"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;i class="fa fa-pinterest-p w3-hover-opacity"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;i class="fa fa-twitter w3-hover-opacity"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;i class="fa fa-linkedin w3-hover-opacity"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;Powered by &lt;a href="https://www.w3schools.com/w3css/default.asp" target="_blank"&gt;w3.css&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+<p class="p2"><br></p>
 </body>
 </html>
