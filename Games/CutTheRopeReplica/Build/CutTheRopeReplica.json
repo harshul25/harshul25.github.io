@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Cut The Rope",
+"productVersion": "0.1",
+"dataUrl": "CutTheRopeReplica.data.unityweb",
+"wasmCodeUrl": "CutTheRopeReplica.wasm.code.unityweb",
+"wasmFrameworkUrl": "CutTheRopeReplica.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": true,
+"multithreading": false,
+"unityVersion": "2019.2.17f1"
+}
