@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>PROJECT RCREATE</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -35,21 +35,21 @@ body {font-family: "Raleway", Arial, sans-serif}
   <!-- Photo Grid -->
   <div class="w3-row" id = "unity">
     <div class="w3-half">
-      <a href="Games/aaReplica/index.html"><img src="Pictures/aa.png" style="width:100%"></a> 
-      <a href="Games/TappyBirdReplica/index.html"><img src="Pictures/tappy.png" style="width:100%"></a>
-      <a href="Games/CutTheRopeReplica/index.html"><img src="Pictures/cutR.png" style="width:100%"></a>
-      <a href="Games/ColorSwitchReplica/index.html"><img src="Pictures/color.png" style="width:100%"></a>
-      <a href="Games/Hoops/index.html"><img src="Pictures/Bball.png" style="width:100%"></a>
+      <a href="Games/aaReplica/index.html"><img src="Pictures/aa.png" style="width:100%" title="aaReplica: Press spacebar to shoot"></a> 
+      <a href="Games/TappyBirdReplica/index.html"><img src="Pictures/tappy.png" title="TappyBird Press spacebar to jump" style="width:100%"></a>
+      <a href="Games/CutTheRopeReplica/index.html"><img src="Pictures/cutR.png" title="Cut The Rope: Right click to cut the Rope" style="width:100%"></a>
+      <a href="Games/ColorSwitchReplica/index.html"><img src="Pictures/color.png" title="ColorSwitch: Press spacebar to jump"style="width:100%"></a>
+      <a href="Games/Hoops/index.html"><img src="Pictures/Bball.png" style="width:100%" title="Hoops: RightC click and slide your curser to shoot"></a>
       
     </div>
 
     <div class="w3-half">
         
-     <a href="Games/DodgeTheBlockReplica/index.html"><img src="Pictures/dodgeB.png" style="width:100%"></a>
-     <a href="Games/FlippyKnifeReplica/index.html"><img src="Pictures/flippyK.png" style="width:100%"></a>
-     <a href="Games/SnakesReplica/index.html"><img src="Pictures/snakes.png" style="width:100%"></a>
-     <a href="Games/BubbleStruggleReplica/index.html"><img src="Pictures/Bubble.png" style="width:100%"></a>
-     <a href="Games/RPG/index.html"><img src="Pictures/RPG.png" height="405" style="width:100%"></a>
+     <a href="Games/DodgeTheBlockReplica/index.html"><img src="Pictures/dodgeB.png" title="Dodge the Block: Use arrow keys to save yourself from the boxes" style="width:100%"></a>
+     <a href="Games/FlippyKnifeReplica/index.html"><img src="Pictures/flippyK.png" title="Flippy Knife: Right Click and move the curser to flip the knife" style="width:100%"></a>
+     <a href="Games/SnakesReplica/index.html"><img src="Pictures/snakes.png" style="width:100%" title="Snakes: Use arrow keys and 'A' and 'D' to move the snakes"></a>
+     <a href="Games/BubbleStruggleReplica/index.html"><img src="Pictures/Bubble.png" title="Bubble Struggle: Use space to shoot and arrow keys to move around" style="width:100%"></a>
+     <a href="Games/RPG/index.html"><img src="Pictures/RPG.png" height="405"  title="Still in development" style="width:100%"></a>
     </div>
   </div>
   
@@ -62,19 +62,17 @@ body {font-family: "Raleway", Arial, sans-serif}
   <p class="w3-center w3-large">Lets get in touch. Send a message:</p>
   <div style="margin-top:48px">
     <br>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+    
+     
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" id="Message"></p>
       <p>
-        <button class="w3-button w3-black" type="submit">
+        <button class="w3-button w3-black" type="submit" onclick="submitClick()" id="Btn">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
-    </form>
+    
     <!-- Image of location/map -->
-    <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+   
   </div>
 </div>
 
@@ -82,14 +80,100 @@ body {font-family: "Raleway", Arial, sans-serif}
 <footer class="w3-center w3-white w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <i class="fa fa-github w3-hover-opacity"></i>
+   <a href="https://twitter.com/HarshulMehta25"><i class="fa fa-twitter w3-hover-opacity"></i></a> 
+   <a href="https://www.linkedin.com/in/harshul-mehta/"><i class="fa fa-linkedin w3-hover-opacity"></i></a> 
+    <a href="https://github.com/harshul25"><i class="fa fa-github w3-hover-opacity"></i></a>
   </div>
   
 </footer>
 
 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+
+<script>
+    
+    
+    // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC_3p6fILc_p6I-vIwtOjWcTCTisSvdgV4",
+          authDomain: "reach-c4bb7.firebaseapp.com",
+          databaseURL: "https://reach-c4bb7.firebaseio.com",
+          projectId: "reach-c4bb7",
+          storageBucket: "reach-c4bb7.appspot.com",
+          messagingSenderId: "49135709840",
+          appId: "1:49135709840:web:6c45e42afe3af25e5bf215",
+          measurementId: "G-T7DVVE0G6P"
+          };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        
+        
+        
+        var comment = document.getElementById("Message");
+        var btn = document.getElementById("Btn");
+        
+        function submitClick(){
+            var firebaseRef = firebase.database().ref();
+            var msgtext = comment.value;
+            firebaseRef.push().set(msgtext);
+            
+        }
+        
+        
+        /*const name = document.getElementById("Name");
+
+        const database = firebase.database();
+        const rootRef= database.ref('Users');
+        
+        addBtn.addEventListener('click',(e) =>{
+            e.preventDefault();
+            
+            database.ref('/users/').set({
+                 name: name.value
+                
+            });
+            //const autoId = rootRef.push().key
+            //rootRef.child(autoId).set({
+            //    name: Name.value;
+           
+        });
+    
+    
+    function writeNewPost(uid, username, picture, title, body) {
+  // A post entry.
+  var postData = {
+    author: username,
+    uid: uid,
+    body: body,
+    title: title,
+    starCount: 0,
+    authorPic: picture
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/posts/' + newPostKey] = postData;
+  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+  return firebase.database().ref().update(updates);
+}
+*/
+
+
+    
+</script>
  
 </body>
 </html>
