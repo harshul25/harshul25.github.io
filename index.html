@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>PROJECT RCREATE</title>
+<!-- This page was made using w3 style sheets and Firebase Realtime database -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -39,7 +40,7 @@ body {font-family: "Raleway", Arial, sans-serif}
       <a href="Games/TappyBirdReplica/index.html"><img src="Pictures/tappy.png" title="TappyBird Press spacebar to jump" style="width:100%"></a>
       <a href="Games/CutTheRopeReplica/index.html"><img src="Pictures/cutR.png" title="Cut The Rope: Right click to cut the Rope" style="width:100%"></a>
       <a href="Games/ColorSwitchReplica/index.html"><img src="Pictures/color.png" title="ColorSwitch: Press spacebar to jump"style="width:100%"></a>
-      <a href="Games/Hoops/index.html"><img src="Pictures/Bball.png" style="width:100%" title="Hoops: RightC click and slide your curser to shoot"></a>
+      <a href="Games/Hoops/index.html"><img src="Pictures/Bball.png" style="width:100%" title="Hoops: Right click and slide your curser to shoot"></a>
       
     </div>
 
@@ -51,19 +52,17 @@ body {font-family: "Raleway", Arial, sans-serif}
      <a href="Games/BubbleStruggleReplica/index.html"><img src="Pictures/Bubble.png" title="Bubble Struggle: Use space to shoot and arrow keys to move around" style="width:100%"></a>
      <a href="Games/RPG/index.html"><img src="Pictures/RPG.png" height="405"  title="Still in development" style="width:100%"></a>
     </div>
+ 
   </div>
-  
-<!-- End Page Content -->
 </div>
-
 <!-- Contact Section -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
   <h3 class="w3-center">CONTACT</h3>
   <p class="w3-center w3-large">Lets get in touch. Send a message:</p>
   <div style="margin-top:48px">
     <br>
-    
-     
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Message" id="letter"></p>
+     <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email" id="Email"></p>
       <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" id="Message"></p>
       <p>
         <button class="w3-button w3-black" type="submit" onclick="submitClick()" id="Btn">
@@ -71,7 +70,7 @@ body {font-family: "Raleway", Arial, sans-serif}
         </button>
       </p>
     
-    <!-- Image of location/map -->
+   
    
   </div>
 </div>
@@ -83,6 +82,8 @@ body {font-family: "Raleway", Arial, sans-serif}
    <a href="https://twitter.com/HarshulMehta25"><i class="fa fa-twitter w3-hover-opacity"></i></a> 
    <a href="https://www.linkedin.com/in/harshul-mehta/"><i class="fa fa-linkedin w3-hover-opacity"></i></a> 
     <a href="https://github.com/harshul25"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <br>
+    
   </div>
   
 </footer>
@@ -119,12 +120,16 @@ body {font-family: "Raleway", Arial, sans-serif}
         
         
         var comment = document.getElementById("Message");
+        var letter = document.getElementById("letter");
+        var email = document.getElementById("Email");
         var btn = document.getElementById("Btn");
         
         function submitClick(){
             var firebaseRef = firebase.database().ref();
             var msgtext = comment.value;
-            firebaseRef.push().set(msgtext);
+            var nametxt = letter.value;
+            var emailtxt = email.value;
+            firebaseRef.push().set(nametxt+" "+emailtxt+" "+msgtext);
             
         }
         
