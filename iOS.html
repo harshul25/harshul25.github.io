@@ -86,8 +86,8 @@ img {margin-bottom: -8px;}
       <i onclick="document.getElementById('download').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
       <h2 class="w3-wide">Apologies</h2>
       <p>I'm still working on the application. But leave me your email and I'll reach out to you if and when I beta test it!</p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('download').style.display='none'">Submit</button>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" id="Answer"></p>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="submitClick()">Submit</button>
     </div>
   </div>
 </div>
@@ -104,6 +104,48 @@ img {margin-bottom: -8px;}
 </footer>
 
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+
+<script>
+    
+    
+    // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC_3p6fILc_p6I-vIwtOjWcTCTisSvdgV4",
+          authDomain: "reach-c4bb7.firebaseapp.com",
+          databaseURL: "https://reach-c4bb7.firebaseio.com",
+          projectId: "reach-c4bb7",
+          storageBucket: "reach-c4bb7.appspot.com",
+          messagingSenderId: "49135709840",
+          appId: "1:49135709840:web:6c45e42afe3af25e5bf215",
+          measurementId: "G-T7DVVE0G6P"
+          };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        
+        
+        
+        var comment = document.getElementById("Answer");
+        var letter = document.getElementById("letter");
+        var email = document.getElementById("Email");
+        var btn = document.getElementById("Btn");
+        
+        function submitClick(){
+            var firebaseRef = firebase.database().ref();
+            var msgtext = comment.value;
+            
+            firebaseRef.push().set("Beta Program: "+msgtext);
+            
+        }
+  </script>
 
 </body>
 </html>

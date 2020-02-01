@@ -129,7 +129,7 @@ body {font-family: "Raleway", Arial, sans-serif}
             var msgtext = comment.value;
             var nametxt = letter.value;
             var emailtxt = email.value;
-            firebaseRef.push().set(nametxt+" "+emailtxt+" "+msgtext);
+            firebaseRef.push().set("Comment: "+nametxt+" "+emailtxt+" "+msgtext);
             
         }
         
